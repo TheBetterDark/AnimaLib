@@ -1,0 +1,11 @@
+[package]
+name = "thebetterdark/animalib"
+description = ""
+version = "0.1.0"
+license = "LGPLv3"
+authors = ["thebetterdark"]
+registry = "https://github.com/UpliftGames/wally-index"
+repo =  "https://github.com/thebetterdark/animalib"
+realm = "shared"
+exclude = ["**"]
+include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json"]
