@@ -1,3 +1,5 @@
+[![CI](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml/badge.svg)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml)
+[![Releases](https://github.com/TheBetterDark/AnimaLib/actions/workflows/realase.yaml/badge.svg?branch=main)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/realase.yaml)
 # Animalib
 
 Animalib is an animation module tailored for Roblox, streamlining animation tasks and freeing up your time for game creation, rather than dealing with excessive code.
