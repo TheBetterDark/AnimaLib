@@ -1,6 +1,23 @@
 name: Releases
 
-on: workflow_dispatch
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      draft:
+        type: choice
+        description: Is this a draft release?
+        options: 
+        - true
+        - false
+      pre-release:
+          type: choice
+          description: Is this a pre-release?
+          options: 
+          - true
+          - false
 
 jobs: 
     release:
@@ -50,5 +67,5 @@ jobs:
               name: ${{ steps.read_toml.outputs.value }}
               tag_name: ${{ steps.read_toml.outputs.value }}
               files: animalib.rbxm
-              generate_release_notes: true
-              draft: true
+              prerelease: ${{ github.event.inputs.pre-release }}
+              draft: ${{ github.event.inputs.draft }}
