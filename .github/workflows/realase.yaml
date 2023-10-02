@@ -3,8 +3,8 @@ name: Releases
 on: workflow_dispatch
 
 jobs: 
-    lint:
-        name: Lint
+    release:
+        name: Release
         runs-on: ubuntu-latest
         steps:
           - name: Checkout code
@@ -45,7 +45,7 @@ jobs:
               wally publish
     
           - name: Release
-            uses: softprops/action-gh-release@v1
+            uses: softprops/action-gh-release@v0.1.15
             with: 
               name: ${{ steps.read_toml.outputs.value }}
               tag_name: ${{ steps.read_toml.outputs.value }}
