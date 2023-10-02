@@ -2,7 +2,7 @@
 name = "thebetterdark/animalib"
 description = ""
 version = "0.1.0"
-license = "LGPLv3"
+license = "lgpl-3.0"
 authors = ["thebetterdark"]
 registry = "https://github.com/UpliftGames/wally-index"
 repo =  "https://github.com/thebetterdark/animalib"
