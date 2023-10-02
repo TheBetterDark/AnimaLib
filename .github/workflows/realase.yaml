@@ -1,0 +1,54 @@
+name: Releases
+
+on: workflow_dispatch
+
+jobs: 
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+    
+          - name: setup-aftman
+            uses: ok-nick/setup-aftman@v0.3.0
+    
+          - name: Run Stylua
+            run: stylua src --check
+    
+          - name: Run Selene
+            run : selene src
+
+          - name: Build animalib.rbxm
+            run: rojo build -o release.rbxm release.project.json
+    
+          - name: Upload animalib.rbxm as build artifact
+            uses: actions/upload-artifact@v3
+            with: 
+              name: animalib
+              path: animalib.rbxm
+    
+          - name: Get Release from wally.toml
+            uses: SebRollen/toml-action@v1.0.0
+            id: read_toml
+            with: 
+              file: 'wally.toml'
+              field: 'package.version'
+    
+    
+          - name: Publish to Wally
+            env: 
+              WALLY_TOKEN: ${{ secrets.WALLY_AUTH_TOKEN }}
+            run: |
+              mkdir =p ~/.wally
+              printf "[tokens]\n\"https://api.wally.run/\" = \"%s\"" "$WALLY_TOKEN" >> ~/.wally/auth.toml
+              wally publish
+    
+          - name: Release
+            uses: softprops/action-gh-release@v1
+            with: 
+              name: ${{ steps.read_toml.outputs.value }}
+              tag_name: ${{ steps.read_toml.outputs.value }}
+              files: animalib.rbxm
+              generate_release_notes: true
+              draft: true

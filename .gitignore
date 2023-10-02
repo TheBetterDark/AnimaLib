@@ -1,0 +1,16 @@
+# VSCode
+.vscode/**
+
+# Project place file
+/Cradle.rbxlx
+
+# Roblox Studio lock files
+*.rbxlx
+*.rbxl
+*.rbxl.lock
+*.rbxmx
+*.rbxm
+
+# Wally
+/Packages
+/wally.lock
