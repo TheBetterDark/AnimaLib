@@ -1,36 +1,27 @@
 {
-  "name": "AnimaLib",
-  "tree": {
-      "$className": "DataModel",
+    "name": "AnimaLib",
+    "tree": {
+        "$className": "DataModel",
 
-      "ServerScriptService": {
-          "$className": "ServerScriptService",
-          "Cradle": {
-              "$path": "test/Server"
-          }
-      },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "test/Server"
+        },
 
-      "StarterPlayer": {
-          "$className": "StarterPlayer",
-          "StarterPlayerScripts": {
-              "$className": "StarterPlayerScripts",
-              "Cradle": {
-                  "$path": "test/Client"
-              }
-          }
-      },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterCharacterScripts": {
+                "$className": "StarterCharacterScripts",
+                "$path": "test/Client"
+            }
+        },
 
-      "ReplicatedStorage": {
-          "$className": "ReplicatedStorage",
-          "Packages": {
-              "$path": "Packages"
-          },
-          "Shared": {
-              "$path": "test/Shared"
-          },
-          "Cradle": {
-              "$path": "src/"
-          }
-      }
-  }
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$path": "Packages",
+            "AnimaLib": {
+                "$path": "src/"
+            }
+        }
+    }
 }
