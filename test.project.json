@@ -1,0 +1,36 @@
+{
+  "name": "AnimaLib",
+  "tree": {
+      "$className": "DataModel",
+
+      "ServerScriptService": {
+          "$className": "ServerScriptService",
+          "Cradle": {
+              "$path": "test/Server"
+          }
+      },
+
+      "StarterPlayer": {
+          "$className": "StarterPlayer",
+          "StarterPlayerScripts": {
+              "$className": "StarterPlayerScripts",
+              "Cradle": {
+                  "$path": "test/Client"
+              }
+          }
+      },
+
+      "ReplicatedStorage": {
+          "$className": "ReplicatedStorage",
+          "Packages": {
+              "$path": "Packages"
+          },
+          "Shared": {
+              "$path": "test/Shared"
+          },
+          "Cradle": {
+              "$path": "src/"
+          }
+      }
+  }
+}

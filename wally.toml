@@ -1,11 +1,20 @@
 [package]
 name = "thebetterdark/animalib"
 description = "An animation module used to streamline animation tasks."
-version = "0.1.0"
+version = "0.2.0"
+
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
 license = "lgpl-3.0"
 authors = ["thebetterdark"]
-registry = "https://github.com/UpliftGames/wally-index"
 repo =  "https://github.com/thebetterdark/animalib"
-realm = "shared"
+
 exclude = ["**"]
 include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json"]
+
+[dependencies]
+Janitor = "howmanysmall/janitor@1.15.2"
+
+[dev-dependencies]
+Iris = "michael-48/iris@2.1.4"
