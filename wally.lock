@@ -13,11 +13,6 @@ version = "1.15.6"
 dependencies = [["Promise", "evaera/promise@4.0.0"]]
 
 [[package]]
-name = "michael-48/iris"
-version = "2.1.4"
-dependencies = []
-
-[[package]]
 name = "thebetterdark/animalib"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [["Janitor", "howmanysmall/janitor@1.15.6"]]
