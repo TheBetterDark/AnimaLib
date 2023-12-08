@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -14,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: setup-aftman
         uses: ok-nick/setup-aftman@v0.3.0
@@ -27,9 +28,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - uses: JohnnyMorganz/stylua-action@v1.1.2
         with:
           token: ${{ SECRETS.GITHUB_TOKEN }}
           args: --check .
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Aftman
+        uses: ok-nick/setup-aftman@v0.3.0
+
+      - name: Install Roblox Studio
+        uses: OrbitalOwen/roblox-win-installer-action@1.1
+        with:
+          cookie: ${{ secrets.ROBLOSECURITY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build test place
+        run: rojo build test.project.json -o test.rbxl
+
+      - name: Run tests
+        run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt
+        continue-on-error: true
+        timeout-minutes: 3
+
+      - name: Check test status
+        shell: bash
+        run: cat test-out.txt | grep "0 failed, 0 skipped" || (cat test-out.txt && exit 1)
