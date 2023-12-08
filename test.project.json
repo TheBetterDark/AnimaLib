@@ -1,0 +1,27 @@
+{
+    "name": "AnimaLib",
+    "tree": {
+        "$className": "DataModel",
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "test/Server"
+        },
+
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterCharacterScripts": {
+                "$className": "StarterCharacterScripts",
+                "$path": "test/Client"
+            }
+        },
+
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$path": "Packages",
+            "AnimaLib": {
+                "$path": "src/"
+            }
+        }
+    }
+}
