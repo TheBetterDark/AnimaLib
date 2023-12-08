@@ -1,3 +1,4 @@
+--# selene: allow(undefined_variable)
 return function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 	local InsertService = game:GetService("InsertService")
