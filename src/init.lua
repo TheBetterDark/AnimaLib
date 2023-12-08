@@ -15,7 +15,7 @@ export type AnimationProperties = {
 	FadeIn: number,
 	FadeOut: number,
 	Looped: boolean,
-	Priority: number,
+	Priority: Enum.AnimationPriority,
 }
 
 export type PlayingAnimation = {
@@ -84,6 +84,7 @@ function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProp
 	properties.FadeIn = properties and properties.FadeIn or 0
 	properties.FadeOut = properties and properties.FadeOut or 0
 	properties.Looped = properties and properties.Looped or false
+	properties.Priority = properties and properties.Priority or Enum.AnimationPriority.Action
 
 	animationTrack.Looped = properties.Looped
 	animationTrack:Play(properties.FadeIn, properties.Weight, properties.Speed)
