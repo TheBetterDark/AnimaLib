@@ -1,4 +1,8 @@
 export type AnimatorClass = {
+	Animator: Animator | AnimationController,
+	LoadedAnimations: { [string]: AnimationTrack },
+	PlayingAnimations: { [string]: PlayingAnimation },
+
 	LoadAnimation: (animationName: string, animationId: Animation) -> AnimationTrack,
 	PlayAnimation: (animation: string, properties: AnimationProperties) -> AnimationTrack,
 	StopAnimation: (animation: string, properties: AnimationProperties) -> AnimationTrack,
@@ -6,7 +10,7 @@ export type AnimatorClass = {
 }
 
 export type AnimationProperties = {
-	AdjustSpeed: number,
+	Speed: number,
 	Weight: number,
 	FadeIn: number,
 	FadeOut: number,
@@ -24,11 +28,12 @@ local Janitor = require(script.Parent.Janitor)
 local AnimaLib = {}
 AnimaLib.__index = AnimaLib
 
-function AnimaLib.new(animator: Animator): AnimatorClass
+function AnimaLib.new(animator: Animator | AnimationController, preferLodEnabled: boolean?): AnimatorClass
 	assert(typeof(animator) == "Instance" and animator:IsA("Animator"), "AnimaLib: Expected animator to be an 'Animator' type")
 
 	local self = {}
-	self.Animator = animator
+	self._animator = animator
+	self._animator.PreferLodEnabled = preferLodEnabled == nil and true or preferLodEnabled
 
 	self.LoadedAnimations = {}
 	self.PlayingAnimations = {}
@@ -55,7 +60,7 @@ function AnimaLib:LoadAnimation(animationName: string, animationId: number): Ani
 	local animation = Instance.new("Animation")
 	animation.AnimationId = animationId
 
-	self.LoadedAnimations[animationName] = self.Animator:LoadAnimation(animation)
+	self.LoadedAnimations[animationName] = self._animator:LoadAnimation(animation)
 	return self.LoadedAnimations[animationName]
 end
 
