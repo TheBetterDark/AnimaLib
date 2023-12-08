@@ -46,6 +46,9 @@ jobs:
       - name: Setup Aftman
         uses: ok-nick/setup-aftman@v0.3.0
 
+      - name: Install Packages
+        run: wally install
+
       - name: Install Roblox Studio
         uses: OrbitalOwen/roblox-win-installer-action@1.1
         with:
