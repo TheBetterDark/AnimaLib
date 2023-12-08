@@ -1,7 +1,16 @@
 {
-    "name": "AnimaLib",
+    "name": "animalib-test",
     "tree": {
         "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "Test": {
+				"$path": "."
+			},
+            "AnimaLib": {
+                "$path": "src/"
+            }
+        },
 
         "ServerScriptService": {
             "$className": "ServerScriptService",
@@ -13,14 +22,6 @@
             "StarterCharacterScripts": {
                 "$className": "StarterCharacterScripts",
                 "$path": "test/Client"
-            }
-        },
-
-        "ReplicatedStorage": {
-            "$className": "ReplicatedStorage",
-            "$path": "Packages",
-            "AnimaLib": {
-                "$path": "src/"
             }
         }
     }

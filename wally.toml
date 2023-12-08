@@ -3,7 +3,6 @@ name = "thebetterdark/animalib"
 description = "An animation module used to streamline animation tasks."
 version = "0.2.0"
 license = "lgpl-3.0"
-authors = ["thebetterdark"]
 registry = "https://github.com/UpliftGames/wally-index"
 homepage = "https://thebetterdark.github.io/animalib"
 repo =  "https://github.com/thebetterdark/animalib"
