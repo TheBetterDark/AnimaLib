@@ -12,3 +12,6 @@ include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json"]
 
 [dependencies]
 Janitor = "howmanysmall/janitor@1.15.6"
+
+[dev-dependencies]
+TestEZ = "roblox/testez@0.4.1"

@@ -79,7 +79,9 @@ function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProp
 	end
 
 	local animationTrack: AnimationTrack = self.LoadedAnimations[animationName]
-	properties.Speed = properties and properties.AdjustSpeed or 1
+
+	properties = properties or {}
+	properties.Speed = properties and properties.Speed or 1
 	properties.Weight = properties and properties.Weight or 1
 	properties.FadeIn = properties and properties.FadeIn or 0
 	properties.FadeOut = properties and properties.FadeOut or 0
@@ -87,6 +89,7 @@ function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProp
 	properties.Priority = properties and properties.Priority or Enum.AnimationPriority.Action
 
 	animationTrack.Looped = properties.Looped
+	animationTrack.Priority = properties.Priority
 	animationTrack:Play(properties.FadeIn, properties.Weight, properties.Speed)
 
 	self.PlayingAnimations[animationName] = {
@@ -120,6 +123,10 @@ function AnimaLib:StopAnimation(animationName: string, overrideFadeOut)
 end
 
 function AnimaLib:StopAllAnimations()
+	if not self.PlayingAnimations then
+		return
+	end
+
 	for animationName, _ in pairs(self.PlayingAnimations) do
 		self:StopAnimation(animationName)
 	end

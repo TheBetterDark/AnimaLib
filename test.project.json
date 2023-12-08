@@ -1,28 +1,50 @@
 {
-    "name": "animalib-test",
+    "name": "AnimaLib-test",
     "tree": {
         "$className": "DataModel",
+
+        "Workspace": {
+            "$className": "Workspace",
+        
+            "Baseplate": {
+                "$className": "Part",
+                "$properties": {
+                    "Anchored": true,
+                    "Locked": true,
+                    "Size": {
+                        "Vector3": [2048, 2, 2048]
+                    },
+                    "Color" : {
+                        "Color3": [0.3, 0.3, 0.3]
+                    }
+                }
+            }
+        },
+
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
-            "Test": {
-				"$path": "."
+            "Packages": {
+                "$path": "Packages/",
+                "AnimaLib": {
+                    "$path": "src/"
+                }
+            }
+        },
+
+        "TestService": {
+			"$className": "TestService",
+			"$properties": {
+				"ExecuteWithStudioRun": true,
+                "NumberOfPlayers": 0,
+                "SimulateSecondsLag": 0,
+                "Timeout": 10
 			},
-            "AnimaLib": {
-                "$path": "src/"
+            "DevPackages": {
+                "$path": "DevPackages/"
+            },
+            "run": {
+                "$path": "tests/test.server.lua"
             }
-        },
-
-        "ServerScriptService": {
-            "$className": "ServerScriptService",
-            "$path": "test/Server"
-        },
-
-        "StarterPlayer": {
-            "$className": "StarterPlayer",
-            "StarterCharacterScripts": {
-                "$className": "StarterCharacterScripts",
-                "$path": "test/Client"
-            }
-        }
+		}
     }
 }
