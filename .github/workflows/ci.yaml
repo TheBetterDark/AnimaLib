@@ -65,7 +65,7 @@ jobs:
 
       - name: Print test output
         shell: bash
-        run: cat test-out.txt || echo "No test output"
+        run: cat test-out.txt
 
       - name: Check test status
         shell: bash
