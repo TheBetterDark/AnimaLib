@@ -58,10 +58,13 @@ jobs:
       - name: Build test place
         run: rojo build test.project.json -o test.rbxl
 
-      - name: Run tests
-        run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt
+      - name: Run test
+        run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt || echo "Test failed"
         continue-on-error: true
         timeout-minutes: 3
+
+      - name: Print test output
+        run: cat test-out.txt || echo "No test output"
 
       - name: Check test status
         shell: bash
