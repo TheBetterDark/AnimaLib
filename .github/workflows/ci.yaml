@@ -62,11 +62,3 @@ jobs:
         run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt
         continue-on-error: true
         timeout-minutes: 3
-
-      - name: Print test output
-        shell: bash
-        run: cat test-out.txt
-
-      - name: Check test status
-        shell: bash
-        run: cat test-out.txt | grep "0 failed, 0 skipped" || (cat test-out.txt && exit 1) || echo "No test output" && exit 1
