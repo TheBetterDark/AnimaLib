@@ -1,0 +1,11 @@
+gitRepoUrl = "https://github.com/TheBetterDark/AnimaLib"
+gitSourceBranch = "main"
+changelog = true
+
+[home]
+enabled = true
+includeReadme = false
+
+[docusaurus]
+tagline = "An animation module used to streamline animation tasks."
+favicon = "/img/favicon.png"

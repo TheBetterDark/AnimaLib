@@ -1,3 +1,20 @@
+--[=[
+	@interface AnimatorClass
+	@within AnimaLib
+
+	.Animator Animator
+	.LoadedAnimations {string: AnimationTrack}
+	.PlayingAnimations {string: PlayingAnimation}
+
+	.LoadAnimation(string, number) -> AnimationTrack
+	.GetAnimationTrack(string) -> AnimationTrack
+	.PlayAnimation(string, AnimationProperties, boolean?) -> AnimationTrack
+	.StopAnimation(string, number?) -> nil
+	.StopAllAnimations() -> nil
+	.Destroy() -> nil
+
+	AnimatorClass is a table that contains the Animator, LoadedAnimations, and PlayingAnimations tables. It also contains functions that you can use to interact with the Animator & AnimationTracks. This is returned when you create a new AnimaLib instance.
+]=]
 export type AnimatorClass = {
 	Animator: Animator | AnimationController,
 	LoadedAnimations: { [string]: AnimationTrack },
@@ -9,6 +26,19 @@ export type AnimatorClass = {
 	StopAllAnimations: (properties: AnimationProperties) -> nil,
 }
 
+--[=[
+	@interface AnimationProperties
+	@within AnimaLib
+
+	.Speed number?
+	.Weight number?
+	.FadeIn number?
+	.FadeOut number?
+	.Looped boolean?
+	.Priority Enum.AnimationPriority?
+
+	AnimationProperties is a table that contains properties that you can used to influence how an animation is played.
+]=]
 export type AnimationProperties = {
 	Speed: number,
 	Weight: number,
@@ -18,6 +48,15 @@ export type AnimationProperties = {
 	Priority: Enum.AnimationPriority,
 }
 
+--[=[
+	@interface PlayingAnimation
+	@within AnimaLib
+
+	.AnimationTrack AnimationTrack
+	.Properties AnimationProperties
+
+	PlayingAnimation is a table that contains an AnimationTrack and AnimationProperties. This is returned when you play an animation.
+]=]
 export type PlayingAnimation = {
 	AnimationTrack: AnimationTrack,
 	Properties: AnimationProperties,
@@ -25,10 +64,36 @@ export type PlayingAnimation = {
 
 local Janitor = require(script.Parent.Janitor)
 
+--[=[
+	@class AnimaLib
+	@server
+	@client
+
+	This is the API documentation for AnimaLib module. This includes all the API functions and properties that you can use.
+	```lua
+	local AnimaLib = require(somePath.AnimaLib)
+	local Animator = someInstance.Animator
+
+	local AnimaLib = AnimaLib.new(Animator)
+	```
+]=]
 local AnimaLib = {}
 AnimaLib.__index = AnimaLib
 
-function AnimaLib.new(animator: Animator | AnimationController, preferLodEnabled: boolean?): AnimatorClass
+--[=[
+	@param animator Animator
+	@param preferLodEnabled boolean?
+	@return AnimatorClass
+
+	This creates a new AnimaLib instance.
+	```lua
+	local AnimaLib = AnimaLib.new(Animator)
+	```
+	:::tip
+	You can set preferLodEnabled to false if you want to disable the animator's PreferLodEnabled property. To find out more about PreferLodEnabled, check out the [roblox api reference](https://developer.roblox.com/en-us/api-reference/property/Animator/PreferLodEnabled).
+	:::
+]=]
+function AnimaLib.new(animator: Animator, preferLodEnabled: boolean?): AnimatorClass
 	assert(typeof(animator) == "Instance" and animator:IsA("Animator"), "AnimaLib: Expected animator to be an 'Animator' type")
 
 	local self = {}
@@ -41,6 +106,21 @@ function AnimaLib.new(animator: Animator | AnimationController, preferLodEnabled
 	return setmetatable(self, AnimaLib)
 end
 
+--[=[
+	@param animationName string
+	@param animationId number
+	@return AnimationTrack
+
+	This function will load an animation and return an AnimationTrack.
+	```lua
+	local AnimaLib = AnimaLib.new(Animator)
+	local AnimationTrack = AnimaLib:LoadAnimation("AnimationName", "rbxassetid://123456789")
+	```
+
+	:::warning
+	You can't load animations with the same name more than once. If you try to load an animation with the same name more than once, it will throw an error.
+	:::
+]=]
 function AnimaLib:LoadAnimation(animationName: string, animationId: number): AnimationTrack
 	assert(type(animationName) == "string", "AnimLib: Expected animationName to be a string.")
 	assert(type(animationId) == "string", "AnimLib: Expected animationId to be a string.")
@@ -64,13 +144,57 @@ function AnimaLib:LoadAnimation(animationName: string, animationId: number): Ani
 	return self.LoadedAnimations[animationName]
 end
 
+--[=[
+	@param animationName string
+	@return AnimationTrack
+
+	This function will return an AnimationTrack.
+
+	:::tip
+	You can use this to connect to events on the AnimationTrack.
+	```lua
+	local AnimaLib = AnimaLib.new(Animator)
+	local AnimationTrack = AnimaLib:GetAnimationTrack("AnimationName")
+
+	AnimationTrack.Stopped:Connect(function()
+		print("Animation stopped!")
+	end)
+	```
+	:::
+]=]
 function AnimaLib:GetAnimationTrack(animationName: string): AnimationTrack
 	assert(type(animationName) == "string", "AnimLib: Expected animationName to be a string.")
 	assert(self.LoadedAnimations[animationName], string.format("AnimaLib: Unable to get animation '%s' because it is not loaded.", animationName))
 	return self.LoadedAnimations[animationName]
 end
 
-function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProperties, ignorePlaying: boolean)
+--[=[
+	@param animationName string
+	@param properties AnimationProperties?
+	@param ignorePlaying boolean?
+	@return AnimationTrack
+
+	This function will play an animation.
+	```lua
+	local AnimaLib = AnimaLib.new(Animator)
+	local AnimationTrack = AnimaLib:PlayAnimation("AnimationName", {
+		Speed = 1,
+		Weight = 1,
+		FadeIn = 0,
+		FadeOut = 0,
+		Looped = false,
+		Priority = Enum.AnimationPriority.Action,
+	})
+	```
+
+	:::caution
+	You can only play animations that have been loaded using [AnimaLib:LoadAnimation](#LoadAnimation).
+	:::
+	:::warning
+	Roblox enforces a limit on how many tracks can be playing at once. This limit is 256. If you try to play more than 256 animations at once, it will not play. See [this](https://devforum.roblox.com/t/is-there-a-way-to-unload-animations/1525525/12) devforum post for more information.
+	:::
+]=]
+function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProperties, ignorePlaying: boolean): AnimationTrack
 	assert(self.LoadedAnimations[animationName], string.format("AnimaLib: Unable to play animation '%s' because it is not loaded.", animationName))
 
 	if self.PlayingAnimations[animationName] and not ignorePlaying then
@@ -106,7 +230,14 @@ function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProp
 	return animationTrack
 end
 
-function AnimaLib:StopAnimation(animationName: string, overrideFadeOut)
+--[=[
+	@param animationName string
+	@param overrideFadeOut number?
+	@return nil
+
+	This function will stop an animation.
+]=]
+function AnimaLib:StopAnimation(animationName: string, overrideFadeOut: number?)
 	assert(self.LoadedAnimations[animationName], string.format("AnimaLib: Unable to stop animation '%s' because it is not loaded.", animationName))
 
 	local playingAnimation: PlayingAnimation = self.PlayingAnimations[animationName]
@@ -122,6 +253,15 @@ function AnimaLib:StopAnimation(animationName: string, overrideFadeOut)
 	end
 end
 
+--[=[
+	@return nil
+
+	This function will stop all animations.
+
+	:::caution
+	This will only stop animations in the scope of the AnimaLib instance. If you have multiple AnimaLib instances, you will need to call this function on each instance.
+	:::
+]=]
 function AnimaLib:StopAllAnimations()
 	if not self.PlayingAnimations then
 		return
@@ -133,6 +273,15 @@ function AnimaLib:StopAllAnimations()
 	task.wait()
 end
 
+--[=[
+	@return nil
+
+	This function will destroy the AnimaLib instance.
+
+	:::caution
+	This will only destroy the AnimaLib instance. If you have multiple AnimaLib instances, you will need to call this function on each instance.
+	:::
+]=]
 function AnimaLib:Destroy()
 	self:StopAllAnimations()
 	self.LoadedAnimations = nil
