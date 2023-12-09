@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[984],{7636:e=>{e.exports=JSON.parse('[{"type":"link","href":"/api/AnimaLib","label":"\u200bAnima\u200bLib"}]')}}]);
