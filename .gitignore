@@ -1,13 +1,17 @@
 # Visual Studio Code
 /.vscode
 
-# Roblox Studio lock files
+# Roblox Studio files
 *.rbxlx
 *.rbxl
 *.rbxl.lock
-*.rbxmx
 *.rbxm
 
 # Wally
 /Packages
 /DevPackages
+/ServerPackages
+
+# Build asset files
+/build
+test-out.txt

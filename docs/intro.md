@@ -1,11 +1,12 @@
-# Animalib
+# About
 
-[![CI](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml/badge.svg)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml)
-[![Release](https://github.com/TheBetterDark/AnimaLib/actions/workflows/publish.yaml/badge.svg)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/publish.yaml)
+AnimaLib is a animation module designed to streamline the process of scripting animations in Roblox. It handles the creation of [Animations](https://developer.roblox.com/en-us/api-reference/class/Animation) and [AnimationTracks](https://developer.roblox.com/en-us/api-reference/class/AnimationTrack) taking the hassle out of scripting animations.
 
-Animalib is an animation module tailored for Roblox, streamlining animation tasks and freeing up your time for game creation, rather than dealing with excessive code.
+## Why AnimaLib?
 
-This is still under development and not suitable for production. Please proceed with caution if you choose to use it.
+- **Simple**: AnimaLib is built with simplicity in mind. It provides an intuitive API that makes creating and managing animations in your Roblox games a straightforward process.
+- **Versatile**: AnimaLib allows you the freedom to integrate it seamlessly into your game or utilise it as a foundation for crafting your personalised animation module.
+- **Scalable**: Whether you're creating a small indie game or a large-scale multiplayer experience, AnimaLib scales effortlessly to meet your project's demands.
 
 ## Getting Started
 

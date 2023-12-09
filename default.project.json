@@ -1,9 +1,6 @@
 {
-  "name": "Packages",
-  "tree": {
-    "$path": "src",
-    "AnimaLib": {
-      "$path": "src"
-    }
-  }
+	"name": "AnimaLib",
+	"tree": {
+		"$path": "src"
+	}
 }
