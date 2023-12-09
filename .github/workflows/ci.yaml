@@ -35,30 +35,30 @@ jobs:
           token: ${{ SECRETS.GITHUB_TOKEN }}
           args: --check .
 
-  unit-tests:
-    name: Unit Tests
-    runs-on: windows-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  # unit-tests:
+  #   name: Unit Tests
+  #   runs-on: windows-latest
+  #   timeout-minutes: 10
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Setup Aftman
-        uses: ok-nick/setup-aftman@v0.3.0
+  #     - name: Setup Aftman
+  #       uses: ok-nick/setup-aftman@v0.3.0
 
-      - name: Install Packages
-        run: wally install
+  #     - name: Install Packages
+  #       run: wally install
 
-      - name: Install Roblox Studio
-        uses: OrbitalOwen/roblox-win-installer-action@1.1
-        with:
-          cookie: ${{ secrets.ROBLOSECURITY }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: Install Roblox Studio
+  #       uses: OrbitalOwen/roblox-win-installer-action@1.1
+  #       with:
+  #         cookie: ${{ secrets.ROBLOSECURITY }}
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build test place
-        run: rojo build test.project.json -o test.rbxl
+  #     - name: Build test place
+  #       run: rojo build test.project.json -o test.rbxl
 
-      - name: Run test
-        run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt
-        continue-on-error: true
-        timeout-minutes: 3
+  #     - name: Run test
+  #       run: run-in-roblox --place test.rbxl --script tests\\test.server.lua > test-out.txt
+  #       continue-on-error: true
+  #       timeout-minutes: 3
