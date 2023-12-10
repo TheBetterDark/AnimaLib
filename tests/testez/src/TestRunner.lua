@@ -13,7 +13,7 @@ local LifecycleHooks = require(script.Parent.LifecycleHooks)
 local RUNNING_GLOBAL = "__TESTEZ_RUNNING_TEST__"
 
 local TestRunner = {
-	environment = {}
+	environment = {},
 }
 
 local function wrapExpectContextWithPublicApi(expectationContext)
@@ -81,14 +81,11 @@ function TestRunner.runPlanNode(session, planNode, lifecycleHooks)
 
 		local context = session:getContext()
 
-		local nodeSuccess, nodeResult = xpcall(
-			function()
-				callback(context)
-			end,
-			function(message)
-				return messagePrefix .. debug.traceback(tostring(message), 2)
-			end
-		)
+		local nodeSuccess, nodeResult = xpcall(function()
+			callback(context)
+		end, function(message)
+			return messagePrefix .. debug.traceback(tostring(message), 2)
+		end)
 
 		-- If a node threw an error, we prefer to use that message over
 		-- one created by fail() if it was set.

@@ -10,8 +10,8 @@ local function check(str, test)
 				setfenv(test, getfenv())
 				test()
 			end,
-			path = {"errorTypeTests"}
-		}
+			path = { "errorTypeTests" },
+		},
 	})
 
 	local results = TestEZ.TestRunner.runPlan(plan)
@@ -36,9 +36,11 @@ return {
 	end,
 	["Erroring with an object with __tostring should show the string"] = function()
 		check("FOO", function()
-			local obj = setmetatable({}, {__tostring=function()
-				return "FOO"
-			end})
+			local obj = setmetatable({}, {
+				__tostring = function()
+					return "FOO"
+				end,
+			})
 			error(obj)
 		end)
 	end,

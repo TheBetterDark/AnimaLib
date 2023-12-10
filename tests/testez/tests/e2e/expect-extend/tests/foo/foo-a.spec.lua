@@ -7,7 +7,7 @@ return function()
 						message = "custom failure message (not)",
 						pass = true,
 					}
-				end
+				end,
 			})
 		end)
 
