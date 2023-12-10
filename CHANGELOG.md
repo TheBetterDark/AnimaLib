@@ -1,6 +1,6 @@
 #
 
-## v0.2.2
+## v0.2.3
 
 - Fixed Wally installation issues
 - Tweaked CI workflow
