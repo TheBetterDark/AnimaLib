@@ -16,7 +16,7 @@ Installing AnimaLib is as simple as dropping the module into your game. You can 
 
 #### Roblox Studio
 
-1. Download the latest release of AnimaLib from [Roblox](https://www.roblox.com/library/0/AnimaLib).
+1. Download the latest release of AnimaLib from [Roblox](https://www.roblox.com/library/15603203500/AnimaLib).
 2. Insert AnimaLib into ReplicatedStorage.
 
 #### Rojo/Wally
