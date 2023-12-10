@@ -16,8 +16,8 @@ local Animator = someInstance.Animator
 
 local AnimaLib = AnimaLib.new(Animator)
 ```"><link data-rh="true" rel="icon" href="/AnimaLib/favicon.png"><link data-rh="true" rel="canonical" href="https://TheBetterDark.github.io/AnimaLib/api/AnimaLib"><link data-rh="true" rel="alternate" href="https://TheBetterDark.github.io/AnimaLib/api/AnimaLib" hreflang="en"><link data-rh="true" rel="alternate" href="https://TheBetterDark.github.io/AnimaLib/api/AnimaLib" hreflang="x-default"><link rel="stylesheet" href="/AnimaLib/assets/css/styles.fdfd902f.css">
-<link rel="preload" href="/AnimaLib/assets/js/runtime~main.3d182884.js" as="script">
-<link rel="preload" href="/AnimaLib/assets/js/main.e988d0b6.js" as="script">
+<link rel="preload" href="/AnimaLib/assets/js/runtime~main.2dffcd27.js" as="script">
+<link rel="preload" href="/AnimaLib/assets/js/main.0b4749e8.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -114,9 +114,9 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
     <p>Roblox enforces a limit on how many tracks can be playing at once. This limit is 256. If you try to play more than 256 animations at once, it will not play. See <a href="https://devforum.roblox.com/t/is-there-a-way-to-unload-animations/1525525/12" target="_blank">this</a> devforum post for more information.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAnimation"><code style="text-decoration:none">StopAnimation</code><a href="#StopAnimation" class="hash-link" aria-label="Direct link to StopAnimation" title="Direct link to StopAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L240"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>overrideFadeOut<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAnimation"><code style="text-decoration:none">StopAnimation</code><a href="#StopAnimation" class="hash-link" aria-label="Direct link to StopAnimation" title="Direct link to StopAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L239"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>overrideFadeOut<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will stop an animation.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAllAnimations"><code style="text-decoration:none">StopAllAnimations</code><a href="#StopAllAnimations" class="hash-link" aria-label="Direct link to StopAllAnimations" title="Direct link to StopAllAnimations">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L265"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAllAnimations</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAllAnimations"><code style="text-decoration:none">StopAllAnimations</code><a href="#StopAllAnimations" class="hash-link" aria-label="Direct link to StopAllAnimations" title="Direct link to StopAllAnimations">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L264"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAllAnimations</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will stop all animations.</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
@@ -128,7 +128,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
     <p>This will only stop animations in the scope of the AnimaLib instance. If you have multiple AnimaLib instances, you will need to call this function on each instance.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L285"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/TheBetterDark/AnimaLib/blob/main/src/init.lua#L284"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will destroy the AnimaLib instance.</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
@@ -273,7 +273,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 240,
+                &quot;line&quot;: 239,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -289,7 +289,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 265,
+                &quot;line&quot;: 264,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -305,7 +305,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 285,
+                &quot;line&quot;: 284,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -439,7 +439,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#AnimationProperties" class="table-of-contents__link toc-highlight">AnimationProperties</a></li><li><a href="#AnimatorClass" class="table-of-contents__link toc-highlight">AnimatorClass</a></li><li><a href="#PlayingAnimation" class="table-of-contents__link toc-highlight">PlayingAnimation</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#GetAnimationTrack" class="table-of-contents__link toc-highlight">:GetAnimationTrack</a></li><li><a href="#LoadAnimation" class="table-of-contents__link toc-highlight">:LoadAnimation</a></li><li><a href="#PlayAnimation" class="table-of-contents__link toc-highlight">:PlayAnimation</a></li><li><a href="#StopAllAnimations" class="table-of-contents__link toc-highlight">:StopAllAnimations</a></li><li><a href="#StopAnimation" class="table-of-contents__link toc-highlight">:StopAnimation</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 TheBetterDark. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/AnimaLib/assets/js/runtime~main.3d182884.js"></script>
-<script src="/AnimaLib/assets/js/main.e988d0b6.js"></script>
+<script src="/AnimaLib/assets/js/runtime~main.2dffcd27.js"></script>
+<script src="/AnimaLib/assets/js/main.0b4749e8.js"></script>
 </body>
 </html>
