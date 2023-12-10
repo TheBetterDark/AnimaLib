@@ -1,6 +1,9 @@
 {
 	"name": "AnimaLib",
 	"tree": {
-		"$path": "src"
+		"$className": "DataModel",
+		"AnimaLib": {
+			"$path": "src/"
+		}
 	}
 }
