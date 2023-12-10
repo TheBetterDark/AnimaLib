@@ -198,7 +198,6 @@ function AnimaLib:PlayAnimation(animationName: string, properties: AnimationProp
 	assert(self.LoadedAnimations[animationName], string.format("AnimaLib: Unable to play animation '%s' because it is not loaded.", animationName))
 
 	if self.PlayingAnimations[animationName] and not ignorePlaying then
-		warn(string.format("AnimaLib: '%s' is already playing.", animationName))
 		return
 	end
 
