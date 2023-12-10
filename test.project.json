@@ -33,18 +33,13 @@
 
         "TestService": {
 			"$className": "TestService",
+            "$path": "tests/",
 			"$properties": {
 				"ExecuteWithStudioRun": true,
                 "NumberOfPlayers": 0,
                 "SimulateSecondsLag": 0,
                 "Timeout": 10
-			},
-            "DevPackages": {
-                "$path": "DevPackages/"
-            },
-            "run": {
-                "$path": "tests/test.server.lua"
-            }
+			}
 		}
     }
 }
