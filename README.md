@@ -1,4 +1,4 @@
-# Animalib
+# AnimaLib
 
 [![CI](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml/badge.svg)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/ci.yaml)
 [![Release](https://github.com/TheBetterDark/AnimaLib/actions/workflows/publish.yaml/badge.svg)](https://github.com/TheBetterDark/AnimaLib/actions/workflows/publish.yaml)
