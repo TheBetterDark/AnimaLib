@@ -1,5 +1,5 @@
 [package]
-name = "metricsrbx/animalib"
+name = "nek-technology/animalib"
 description = "An animation module used to streamline animation tasks."
 version = "0.2.3"
 license = "lgpl-3.0"
