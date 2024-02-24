@@ -1,4 +1,7 @@
 #
+## v0.2.4
+
+- Added notes to `:PlayAnimation` method regarding the amendment of an animation instance's parent after loading an animation. 
 
 ## v0.2.3
 
