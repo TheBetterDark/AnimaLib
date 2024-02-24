@@ -16,8 +16,8 @@ local Animator = someInstance.Animator
 
 local AnimaLib = AnimaLib.new(Animator)
 ```"><link data-rh="true" rel="icon" href="/AnimaLib/favicon.png"><link data-rh="true" rel="canonical" href="https://nek-technology.github.io/AnimaLib/api/AnimaLib"><link data-rh="true" rel="alternate" href="https://nek-technology.github.io/AnimaLib/api/AnimaLib" hreflang="en"><link data-rh="true" rel="alternate" href="https://nek-technology.github.io/AnimaLib/api/AnimaLib" hreflang="x-default"><link rel="stylesheet" href="/AnimaLib/assets/css/styles.fdfd902f.css">
-<link rel="preload" href="/AnimaLib/assets/js/runtime~main.51b96353.js" as="script">
-<link rel="preload" href="/AnimaLib/assets/js/main.39af9099.js" as="script">
+<link rel="preload" href="/AnimaLib/assets/js/runtime~main.874d8001.js" as="script">
+<link rel="preload" href="/AnimaLib/assets/js/main.99b03a7e.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -82,7 +82,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
 </code></pre>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PlayAnimation"><code style="text-decoration:none">PlayAnimation</code><a href="#PlayAnimation" class="hash-link" aria-label="Direct link to PlayAnimation" title="Direct link to PlayAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L197"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">PlayAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>properties<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/AnimaLib/api/AnimaLib#AnimationProperties">AnimationProperties?</a></code><code>,</code></div><div><code>ignorePlaying<!-- -->: </code><code class="blue_P4bS">boolean?</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/AnimationTrack" target="_blank" rel="noopener noreferrer">AnimationTrack<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PlayAnimation"><code style="text-decoration:none">PlayAnimation</code><a href="#PlayAnimation" class="hash-link" aria-label="Direct link to PlayAnimation" title="Direct link to PlayAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L199"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">PlayAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>properties<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/AnimaLib/api/AnimaLib#AnimationProperties">AnimationProperties?</a></code><code>,</code></div><div><code>ignorePlaying<!-- -->: </code><code class="blue_P4bS">boolean?</code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/AnimationTrack" target="_blank" rel="noopener noreferrer">AnimationTrack<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
 <p>This function will play an animation.</p>
 <pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> AnimaLib <span class="token operator">=</span> AnimaLib<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span>Animator<span class="token punctuation">)</span>
 <span class="token keyword">local</span> AnimationTrack <span class="token operator">=</span> AnimaLib<span class="token punctuation">:</span><span class="token function">PlayAnimation</span><span class="token punctuation">(</span><span class="token string">"AnimationName"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -94,6 +94,11 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
 	Priority <span class="token operator">=</span> Enum<span class="token punctuation">.</span>AnimationPriority<span class="token punctuation">.</span>Action<span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
+<p>
+  ::info
+  If you load an animation onto a rig then change the parent of the rig, it will becomme unplayable. Please avoid doing this to prevent tears.
+  ::
+</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
     <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -114,9 +119,9 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
     <p>Roblox enforces a limit on how many tracks can be playing at once. This limit is 256. If you try to play more than 256 animations at once, it will not play. See <a href="https://devforum.roblox.com/t/is-there-a-way-to-unload-animations/1525525/12" target="_blank">this</a> devforum post for more information.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAnimation"><code style="text-decoration:none">StopAnimation</code><a href="#StopAnimation" class="hash-link" aria-label="Direct link to StopAnimation" title="Direct link to StopAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L239"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>overrideFadeOut<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAnimation"><code style="text-decoration:none">StopAnimation</code><a href="#StopAnimation" class="hash-link" aria-label="Direct link to StopAnimation" title="Direct link to StopAnimation">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L241"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAnimation</code><code>(</code><div class="inset_uKQm"><div><code>animationName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>overrideFadeOut<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will stop an animation.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAllAnimations"><code style="text-decoration:none">StopAllAnimations</code><a href="#StopAllAnimations" class="hash-link" aria-label="Direct link to StopAllAnimations" title="Direct link to StopAllAnimations">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L264"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAllAnimations</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="StopAllAnimations"><code style="text-decoration:none">StopAllAnimations</code><a href="#StopAllAnimations" class="hash-link" aria-label="Direct link to StopAllAnimations" title="Direct link to StopAllAnimations">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L266"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">StopAllAnimations</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will stop all animations.</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
@@ -128,7 +133,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
     <p>This will only stop animations in the scope of the AnimaLib instance. If you have multiple AnimaLib instances, you will need to call this function on each instance.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L284"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/nek-technology/AnimaLib/blob/main/src/init.lua#L286"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>AnimaLib<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code class="blue_P4bS">nil</code></div><div>
 <p>This function will destroy the AnimaLib instance.</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
@@ -220,7 +225,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
         },
         {
             &quot;name&quot;: &quot;PlayAnimation&quot;,
-            &quot;desc&quot;: &quot;This function will play an animation.\n```lua\nlocal AnimaLib = AnimaLib.new(Animator)\nlocal AnimationTrack = AnimaLib:PlayAnimation(\&quot;AnimationName\&quot;, {\n\tSpeed = 1,\n\tWeight = 1,\n\tFadeIn = 0,\n\tFadeOut = 0,\n\tLooped = false,\n\tPriority = Enum.AnimationPriority.Action,\n})\n```\n\n:::caution\nYou can only play animations that have been loaded using [AnimaLib:LoadAnimation](#LoadAnimation).\n:::\n:::warning\nRoblox enforces a limit on how many tracks can be playing at once. This limit is 256. If you try to play more than 256 animations at once, it will not play. See [this](https://devforum.roblox.com/t/is-there-a-way-to-unload-animations/1525525/12) devforum post for more information.\n:::&quot;,
+            &quot;desc&quot;: &quot;This function will play an animation.\n```lua\nlocal AnimaLib = AnimaLib.new(Animator)\nlocal AnimationTrack = AnimaLib:PlayAnimation(\&quot;AnimationName\&quot;, {\n\tSpeed = 1,\n\tWeight = 1,\n\tFadeIn = 0,\n\tFadeOut = 0,\n\tLooped = false,\n\tPriority = Enum.AnimationPriority.Action,\n})\n```\n::info\nIf you load an animation onto a rig then change the parent of the rig, it will becomme unplayable. Please avoid doing this to prevent tears.\n::\n:::caution\nYou can only play animations that have been loaded using [AnimaLib:LoadAnimation](#LoadAnimation).\n:::\n:::warning\nRoblox enforces a limit on how many tracks can be playing at once. This limit is 256. If you try to play more than 256 animations at once, it will not play. See [this](https://devforum.roblox.com/t/is-there-a-way-to-unload-animations/1525525/12) devforum post for more information.\n:::&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;animationName&quot;,
@@ -246,7 +251,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 197,
+                &quot;line&quot;: 199,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -273,7 +278,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 239,
+                &quot;line&quot;: 241,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -289,7 +294,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 264,
+                &quot;line&quot;: 266,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -305,7 +310,7 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 284,
+                &quot;line&quot;: 286,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -438,8 +443,8 @@ AnimationTrack<span class="token punctuation">.</span>Stopped<span class="token 
         &quot;line&quot;: 80,
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#AnimationProperties" class="table-of-contents__link toc-highlight">AnimationProperties</a></li><li><a href="#AnimatorClass" class="table-of-contents__link toc-highlight">AnimatorClass</a></li><li><a href="#PlayingAnimation" class="table-of-contents__link toc-highlight">PlayingAnimation</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#GetAnimationTrack" class="table-of-contents__link toc-highlight">:GetAnimationTrack</a></li><li><a href="#LoadAnimation" class="table-of-contents__link toc-highlight">:LoadAnimation</a></li><li><a href="#PlayAnimation" class="table-of-contents__link toc-highlight">:PlayAnimation</a></li><li><a href="#StopAllAnimations" class="table-of-contents__link toc-highlight">:StopAllAnimations</a></li><li><a href="#StopAnimation" class="table-of-contents__link toc-highlight">:StopAnimation</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 nek-technology. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/AnimaLib/assets/js/runtime~main.51b96353.js"></script>
-<script src="/AnimaLib/assets/js/main.39af9099.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#AnimationProperties" class="table-of-contents__link toc-highlight">AnimationProperties</a></li><li><a href="#AnimatorClass" class="table-of-contents__link toc-highlight">AnimatorClass</a></li><li><a href="#PlayingAnimation" class="table-of-contents__link toc-highlight">PlayingAnimation</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#GetAnimationTrack" class="table-of-contents__link toc-highlight">:GetAnimationTrack</a></li><li><a href="#LoadAnimation" class="table-of-contents__link toc-highlight">:LoadAnimation</a></li><li><a href="#PlayAnimation" class="table-of-contents__link toc-highlight">:PlayAnimation</a></li><li><a href="#StopAllAnimations" class="table-of-contents__link toc-highlight">:StopAllAnimations</a></li><li><a href="#StopAnimation" class="table-of-contents__link toc-highlight">:StopAnimation</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 nek-technology. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/AnimaLib/assets/js/runtime~main.874d8001.js"></script>
+<script src="/AnimaLib/assets/js/main.99b03a7e.js"></script>
 </body>
 </html>
