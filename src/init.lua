@@ -186,7 +186,9 @@ end
 		Priority = Enum.AnimationPriority.Action,
 	})
 	```
-
+	::info
+	If you load an animation onto a rig then change the parent of the rig, it will becomme unplayable. Please avoid doing this to prevent tears.
+	::
 	:::caution
 	You can only play animations that have been loaded using [AnimaLib:LoadAnimation](#LoadAnimation).
 	:::
